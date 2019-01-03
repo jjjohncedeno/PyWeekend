@@ -17,10 +17,10 @@
       <input type="hidden" name="name" value="{{name}}"/>
     {{else}}
       <div>
-        <label for="assignment_name" class="screenreader-only">{{#t}}Assignment Name{{/t}}</label>
+        <label for="assignment_name" class="screenreader-only">{{#t}}Nombre del Reto{{/t}}</label>
         <input id="assignment_name"
           name="name"
-          placeholder="{{#t "assignment_name"}}Assignment Name{{/t}}"
+          placeholder="{{#t "assignment_name"}}Nombre del Reto{{/t}}"
           value="{{name}}"
           type="text"
           maxlength="254"
@@ -34,6 +34,7 @@
     {{/if}}
   </div>
 
+  <label>Descripción del Reto</label>
   {{#unless isQuizLTIAssignment}}
     <div class="control-group">
       {{#ifIncludes frozenAttributes "description"}}
