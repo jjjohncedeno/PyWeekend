@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+require_relative './linter'
+
+linter_options = {
+  linter_name: "stylelint",
+  file_regex: /\.s?css$/,
+  format: 'stylelint',
+  command: 'node_modules/.bin/stylelint',
+  append_files_to_command: true,
+  default_boyscout_mode: false
+}
+
+stylelint = Linter.new(linter_options)
+stylelint.run

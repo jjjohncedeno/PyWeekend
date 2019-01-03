@@ -1,0 +1,123 @@
+/*
+ * Copyright (C) 2015 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+@import "base/environment";
+
+#editCalendarEventFull {
+  label.label_with_checkbox {
+    margin-bottom: 10px;
+    input[type="checkbox"] {
+      margin: direction-sides(0 5px 0 0);
+    }
+  }
+  .date_start_end_row {
+    @include clearfix;
+    th, td {
+      vertical-align: top;
+      padding: direction-sides(0 5px 0 0);
+      &:first-child {
+        padding-#{direction(left)}: 0px;
+      }
+      label.row_header {
+        padding-top: 10px;
+      }
+    }
+    input[type="text"], div.input-append {
+      margin-bottom: 0px;
+    }
+    span {
+      float: direction(left);
+      padding: 0 5px;
+      min-height: 40px;
+    }
+    label {
+      font-weight: bold;
+    }
+    .date_field {
+      width: 120px;
+    }
+    .time_field {
+      width: 95px;
+    }
+    .time_separator {
+      width: 6px;
+      line-height: 28px;
+      padding: 0px;
+      text-align: center;
+    }
+    .datetime_suggest {
+      margin-top: 0px;
+      padding-top: 0px;
+    }
+  }
+  .show_if_using_sections {
+    display: none;
+  }
+  &.use_section_dates {
+    .show_if_using_sections {
+      display: block;
+    }
+    .hide_if_using_sections {
+      display: none;
+    }
+  }
+}
+.duplicate_div{
+  float: direction(left);
+  display: inline-block;
+  margin: 0 5px;
+  line-height: 38px;
+  width: 35px;
+  text-align: direction(right);
+}
+.duplicate_td{
+  vertical-align: top;
+  padding-#{direction(left)}: 20px;
+  min-width: 300px;
+}
+#duplicate_interval{
+  width: 50px;
+  float: direction(left);
+  display: inline-block;
+  margin: 0 5px;
+}
+.duplicate_for_div{
+  float: direction(left);
+  display: inline-block;
+  margin: 0 5px;
+  line-height: 38px;
+  width: 35px;
+  text-align: direction(right);
+}
+#duplicate_count{
+  width: 50px;
+  float: direction(left);
+  display: inline-block;
+  margin: 0 5px;
+}
+.occurences_div{
+  float: direction(left);
+  display: inline-block;
+  margin: 0 5px;
+  line-height: 38px;
+}
+.duplicate_tooltip_td{
+  vertical-align: top;
+  padding-#{direction(left)}: 20px;
+  width: 35px;
+}

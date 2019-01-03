@@ -1,0 +1,83 @@
+# What goes in this file:
+# * local canvas configuration (db, ymls, overrides, etc.)
+# * generated/cached stuff (docs, css, js, uploads, etc.)
+#
+# What does NOT go in this file
+# * editor-related stuff
+# * random scripts only used by you
+# * env-specific stuff (e.g. .DS_Store)
+# * pretty much any dotfile not already covered (e.g. .rvmrc)
+#
+# That's what .git/info/exclude and core.excludesfile are for :)
+
+.bundle/
+.byebug_history
+.env
+/.yardoc/
+/.ruby-version
+/app/views/info/styleguide.html.erb
+/config/*.yml
+/config/environments/*-local.rb
+/config/locales/generated/
+/config/RAILS5_2
+/coverage/
+/coverage-js/
+/db/schema.rb
+/db/*.sqlite*
+/db/*sql
+/exports/
+Gemfile.lock
+Gemfile.lock.52
+/log/
+mkmf.log
+/node_modules
+npm-debug.log
+/public/dist/
+/public/doc/api/
+/public/javascripts/translations/
+/tmp/
+/vendor/bundle
+yarn-error.log
+
+# generated plugin stuff
+/app/coffeescripts/plugins/
+/app/stylesheets/plugins/
+/app/views/jst/plugins/
+/public/javascripts/plugins/
+/public/plugins/
+/spec/coffeescripts/plugins/
+/spec/plugins/
+
+# generated client app stuff
+/public/javascripts/client_apps/
+
+# canvas-gems
+/gems/*/coverage
+/gems/*/tmp
+/gems/*/node_modules
+
+# user docker compose overrides
+docker-compose.local.*
+
+# sub-packages
+/packages/*/node_modules
+/packages/*/copy-of-what-gets-published-to-npm-registry
+/packages/canvas-planner/lib
+/packages/canvas-planner/es
+/packages/canvas-planner/coverage/
+/packages/canvas-planner/.babel-cache
+
+# pact artifacts
+/reports/
+/pacts/
+
+# generated scope names
+/lib/api_scope_mapper.rb
+
+# generated scopes markdown
+/doc/api/api_token_scopes.md
+
+# js coverage stuff
+.nyc_output
+coverage-jest
+coverage-karma

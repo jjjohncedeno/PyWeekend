@@ -1,0 +1,16 @@
+<% define_content :link do %>
+  <%= polymorphic_url([asset.context, :wiki_page], id: asset.url) %>
+<% end %>
+
+<% define_content :subject do %>
+  <%= t :subject, "Updated Page: %{title}, %{user}", :title => asset.title.titleize, :user => asset.context.name %>
+<% end %>
+
+<%= t :body, "The page %{title} has been updated.", :title => asset.context.name %>
+
+<%= asset.title.titleize %>
+
+<%= html_to_text(asset.body, :base_url => dashboard_url) %>
+
+
+<%= t :link_message, "You can review it here: %{link}", :link => content(:link) %>

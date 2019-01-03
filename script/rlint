@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+require_relative './linter'
+require 'optparse'
+
+linter_options = {
+  linter_name: "Rubocop",
+  file_regex: /\.rb$/,
+  format: "rubocop",
+  command: "bundle exec rubocop",
+  append_files_to_command: true,
+  severe_levels: [],
+  default_boyscout_mode: false,
+  heavy_mode_proc: proc do |ruby_files|
+    args = ruby_files
+    args_index = ARGV.index('--')
+    if args_index
+      args.concat(ARGV[(args_index + 1)..-1])
+    end
+    RuboCop::CLI.new.run(args)
+  end
+}
+
+OptionParser.new do |opts|
+  opts.on("--heavy") { linter_options[:heavy_mode] = true }
+  opts.on("--boy-scout") { linter_options[:boyscout_mode] = true }
+  opts.on("--plugin PLUGIN") { |v| linter_options[:plugin] = v }
+end.parse!
+
+rlint = Linter.new(linter_options)
+rlint.run

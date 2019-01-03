@@ -1,0 +1,209 @@
+/*
+ * Copyright (C) 2012 - present Instructure, Inc.
+ *
+ * This file is part of Canvas.
+ *
+ * Canvas is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, version 3 of the License.
+ *
+ * Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along
+ * with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+@styleguide Cogs
+
+<br/>
+
+Admin "cog" dropdowns should only be used if there is **more than one action** you want the user to choose from. If there's only one action, please use a regular button.
+
+<br/>
+
+## Toolbar Cog (button + cog)
+
+Admin dropdowns come in two flavors: If the dropdown is to be used in a header/toolbar, please follow the example below:
+
+```html
+<div style="text-align: center;">
+
+  <!-- Begin dropdown markup -->
+  <div class="al-dropdown__container" style="position: relative;">
+    <a class="al-trigger btn" role="button" href="#">
+      <i class="icon-settings"></i>
+      <i class="icon-mini-arrow-down"></i>
+      <span class="screenreader-only">Settings</span>
+    </a>
+    <ul id="toolbar-1" class="al-options" role="menu" tabindex="0" aria-hidden="true" aria-expanded="false" aria-activedescendant="toolbar-2">
+      <li role="presentation">
+        <a href="#" class="icon-edit" id="toolbar-2" tabindex="-1" role="menuitem">Edit</a>
+      </li>
+      <li role="presentation">
+        <a href="#" class="icon-trash" id="toolbar-3" tabindex="-1" role="menuitem">Delete</a>
+      </li>
+      <li role="presentation">
+        <a href="#" class="icon-lock" id="toolbar-4" tabindex="-1" role="menuitem">Lock</a>
+      </li>
+    </ul>
+  </div>
+  <!-- End dropdown markup -->
+
+</div>
+```
+
+## Content cog
+
+For admin dropdowns that appear in main content areas, such as item groups, please use the example below:
+
+```html
+<div style="text-align: center;">
+
+  <!-- Begin dropdown markup -->
+  <div class="al-dropdown__container">
+    <a class="al-trigger al-trigger-gray" role="button" href="#">
+      <i class="icon-settings"></i>
+      <i class="icon-mini-arrow-down"></i>
+      <span class="screenreader-only">Settings</span>
+    </a>
+
+    <ul id="content-1" class="al-options" role="menu" tabindex="0" aria-hidden="true" aria-expanded="false" aria-activedescendant="content-2">
+      <li role="presentation">
+        <a href="#" class="icon-edit" id="content-2" tabindex="-1" role="menuitem" title="Edit">Edit</a>
+      </li>
+      <li role="presentation">
+        <a href="#" class="icon-trash" id="content-3" tabindex="-1" role="menuitem" title="Delete this module">Delete</a>
+      </li>
+    </ul>
+  </div>
+  <!-- End dropdown markup -->
+
+</div>
+```
+
+*/
+
+@keyframes al-slide-down {
+  from {
+    transform: rotateX(-90deg);
+    opacity: 0.2;
+  }
+
+  to {
+    transform: rotateX(0);
+    opacity: 1;
+  }
+}
+
+.admin-links {
+  float: direction(right);
+}
+
+.al-dropdown__container {
+  position: relative;
+  display: inline-block;
+}
+
+.al-options {
+  display: none;
+  -webkit-font-smoothing: antialiased;
+  &.ui-menu{
+    display: block;
+  }
+}
+
+.al-options {
+  box-sizing: border-box;
+  background-color: $ic-color-light;
+  box-shadow: 0px 0px 6px rgba(black, 0.1);
+  position: absolute;
+  padding: 8px 0;
+  border-color: $ic-border-light;
+  text-align: direction(left);
+
+  * { box-sizing: border-box; }
+
+  &.ui-state-open {
+    animation-duration: 0.2s;
+    animation-name: al-slide-down;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0,1,0.5,1);
+    transform-origin: top
+  }
+
+  .ui-menu-item {
+    a {
+      background-color: transparent;
+      color: $ic-font-color-dark;
+      white-space: nowrap;
+      min-width: 180px;
+      padding: $ic-sp/2 $ic-sp;
+
+      & i[class*=icon-]:before,
+      & i[class^=icon-]:before { margin-#{direction(right)}: 8px; }
+    }
+
+    a.disabled.ui-state-focus {
+      border: solid;
+      border-width: 1px;
+      border-color: darken($ic-border-light, 15%);
+    }
+
+    &:first-of-type a {
+      border-top-#{direction(left)}-radius: 0;
+      border-top-#{direction(right)}-radius: 0;
+    }
+    &:last-child a {
+      border-bottom-#{direction(left)}-radius: 0;
+      border-bottom-#{direction(right)}-radius: 0;
+    }
+
+    &.ui-menu-item--helper-text {
+      color: $ic-font-color--subdued;
+      padding: 0 $ic-sp;
+      margin: $ic-sp/2 0;
+    }
+  }
+
+  .ui-menu-item a.disabled,
+  .ui-menu-item a.disabled.ui-state-focus {
+    background: none;
+    cursor: not-allowed;
+    color: darken($ic-color-neutral, 20%);
+  }
+  .ui-menu-carat span { border-color: $ic-color-light transparent; }
+  .ui-state-focus{
+    margin: 0 !important;
+    border: none;
+    text-shadow: none;
+  }
+}
+
+.al-trigger-gray {
+  color: $ic-font-color--subdued;
+  &:hover, &:focus { color: $ic-font-color-dark; }
+}
+
+.admin-link-hover-area:hover .al-trigger,
+.admin-link-hover-area.active .al-trigger,
+.al-trigger.ui-state-active,
+.al-trigger:focus,
+.al-trigger:hover { text-decoration: none; }
+
+.al-trigger {
+  padding-#{direction(left)}: 8px;
+  padding-#{direction(right)}: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  user-select: none;
+  display: inline-block;
+}
+
+.al-hover-container .al-trigger {
+  position: relative;
+}

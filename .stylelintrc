@@ -1,0 +1,17 @@
+{
+  "ignoreFiles": [
+    "app/stylesheets/vendor/**",
+    "client_apps/canvas_quizzes/vendor/**",
+    "public/**",
+  ],
+  "rules": {
+    "color-no-invalid-hex": true,
+    "shorthand-property-no-redundant-values": true,
+    "property-blacklist": [ "/left/", "/right/" ],
+    "declaration-property-value-blacklist": {
+      "text-align": ["left", "right"],
+      "float": ["left", "right"],
+      "clear": ["left", "right"]
+    }
+  }
+}

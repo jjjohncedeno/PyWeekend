@@ -1,0 +1,8 @@
+<% if asset.due_at %>
+  <%= t('%{assignment_name}, %{course_name}, is now due', :assignment_name => asset.title, :course_name => asset.context.name) %>
+  <%= datetime_string(force_zone(asset.due_at)) %>
+<% else %>
+  <%= t('%{assignment_name}, %{course_name}, no longer has a due date', :assignment_name => asset.title, :course_name => asset.context.name) %>
+<% end %>
+
+<%= t('more_info_at_url', 'More info at %{web_address}', :web_address => HostUrl.context_host(asset.context)) %>
