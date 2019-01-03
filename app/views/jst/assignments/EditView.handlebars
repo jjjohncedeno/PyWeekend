@@ -34,7 +34,7 @@
     {{/if}}
   </div>
 
-  <label>Descripción del Reto</label>
+  <label>Descripción del Reto: </label>
   {{#unless isQuizLTIAssignment}}
     <div class="control-group">
       {{#ifIncludes frozenAttributes "description"}}
@@ -71,7 +71,7 @@
 
     <div class="form-column-left no-group">
       <label for="assignment_points_possible">
-        {{#t "points_possible"}}Points{{/t}}
+        {{#t "points_possible"}}Puntuación{{/t}}
       </label>
     </div>
 
@@ -127,7 +127,9 @@
       </label>
     </div>
 
-    {{>[assignments/submission_types_form]}}
+    <div id="divCheckbox" style="display: none;">
+      {{>[assignments/submission_types_form]}}
+    </div>
 
     <fieldset id="similarity_detection_tools">
     </fieldset>
@@ -139,12 +141,15 @@
       </fieldset>
     {{/unless}}
 
-    {{#unless isLargeRoster}}
-      <fieldset id="assignment_peer_reviews_fields"
-        class="control-group"
-        style="{{hiddenIf isExternalTool}}">
-      </fieldset>
-    {{/unless}}
+    <div id="divCheckbox" style="display: none;">
+      {{#unless isLargeRoster}}
+        <fieldset id="assignment_peer_reviews_fields"
+          class="control-group"
+          style="{{hiddenIf isExternalTool}}">
+        </fieldset>
+      {{/unless}}
+    </div>
+    
 
     {{#if postToSISEnabled}}
       <fieldset>
