@@ -27,7 +27,7 @@
 
 <h1 class='screenreader-only'><%= t(:page_title, 'Grades') %></h1>
 <% unless @presenter.student_enrollments.empty? %>
-<h2><%= t('titles.current_student_courses', "Courses I'm Taking") %></h2>
+<h2><%= t('titles.current_student_courses', "PyWeekend I'm Taking") %></h2>
 <table class="course_details student_grades">
 <% @presenter.student_enrollments.each do |course, enrollment| %>
   <tr>
@@ -77,7 +77,7 @@
 </table>
 <% end %>
 <% unless @presenter.teacher_enrollments.empty? %>
-<h2 style="margin-top: 20px;"><%= t('current_teacher_courses', "Courses I'm Teaching") %></h2>
+<h2 style="margin-top: 20px;"><%= t('current_teacher_courses', "PyWeekend I'm Teaching") %></h2>
 <table class="course_details teacher_grades">
 <% @presenter.teacher_enrollments.each do |enrollment| %>
   <tr>
@@ -100,7 +100,7 @@
 <% end %>
 <% unless @presenter.prior_enrollments.empty? %>
 <div style="margin-top: 20px; display: none;" id="previous_courses">
-<h2><%= t('titles.previous_courses', 'Previous Courses') %></h2>
+<h2><%= t('titles.previous_courses', 'Previous PyWeekend') %></h2>
 <table class="summary" style="margin-<%= direction('left') %>: 20px; min-width: 350px;">
   <thead><tr>
     <th><%= t('course', 'Course') %></th>

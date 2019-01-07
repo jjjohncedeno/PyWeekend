@@ -137,8 +137,8 @@
                     <td>
                       <%= settings.select :self_enrollment, [
                               [t(:never_allow_self_enrollment_option, 'Never'), ''],
-                              [t(:self_enroll_for_manually_created_courses_option, 'For Manually-Created Courses'), 'manually_created'],
-                              [t(:self_enroll_for_any_courses_option, 'For Any Courses'), 'any']
+                              [t(:self_enroll_for_manually_created_courses_option, 'For Manually-Created PyWeekend'), 'manually_created'],
+                              [t(:self_enroll_for_any_courses_option, 'For Any PyWeekend'), 'any']
                         ], :selected => @account.settings[:self_enrollment] %>
                     </td>
                   </tr>
@@ -650,8 +650,8 @@ acknowledge that you have read and agreed to the
 
         <% if @account.root_account? && !@account.site_admin? %>
           <fieldset>
-            <h2 class="screenreader-only"><%= t('Who Can Create New Courses') %></h2>
-            <legend><%= t(:create_courses_title, "Who Can Create New Courses") %></legend>
+            <h2 class="screenreader-only"><%= t('Who Can Create New PyWeekend') %></h2>
+            <legend><%= t(:create_courses_title, "Who Can Create New PyWeekend") %></legend>
             <div style="font-size: 0.8em;"><%= t(:create_courses_description, "(Account Administrators can always create courses)") %></div>
             <%= f.fields_for :settings do |settings| %>
               <div>

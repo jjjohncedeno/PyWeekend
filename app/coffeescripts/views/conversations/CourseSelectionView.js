@@ -49,7 +49,7 @@ export default class CourseSelectionView extends View {
   initialize() {
     super.initialize(...arguments)
     if (!this.options.defaultOption)
-      this.options.defaultOption = I18n.t('all_courses', 'All Courses')
+      this.options.defaultOption = I18n.t('all_courses', 'All PyWeekend')
     this.$el.addClass('show-tick')
     this.$el
       .selectpicker({useSubmenus: true})

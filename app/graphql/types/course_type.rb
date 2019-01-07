@@ -38,7 +38,7 @@ module Types
 
     CourseWorkflowState = GraphQL::EnumType.define do
       name "CourseWorkflowState"
-      description "States that Courses can be in"
+      description "States that PyWeekend can be in"
       value "created"
       value "claimed"
       value "available"

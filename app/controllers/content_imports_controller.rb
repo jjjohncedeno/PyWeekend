@@ -16,7 +16,7 @@
 # with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 
-# @API Courses
+# @API PyWeekend
 class ContentImportsController < ApplicationController
   before_action :require_context
   before_action { |c| c.active_tab = "home" }
