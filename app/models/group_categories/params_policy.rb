@@ -28,7 +28,6 @@ module GroupCategories
     def populate_with(args, populate_opts={})
       params = Params.new(args, populate_opts)
       group_category.name = (params.name || group_category.name)
-      group_category.description = params.description
       group_category.self_signup = params.self_signup
       group_category.auto_leader = params.auto_leader
       group_category.group_limit = params.group_limit
