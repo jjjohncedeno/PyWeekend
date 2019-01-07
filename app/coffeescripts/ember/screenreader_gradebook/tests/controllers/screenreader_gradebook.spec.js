@@ -666,12 +666,12 @@ QUnit.module('ScreenReader Gradebook', suiteHooks => {
         Ember.run(() =>
           srgb.get('assignment_groups').pushObject({
             id: '100',
-            name: 'Silent Assignments',
+            name: 'Silent Retos',
             position: 2,
             assignments: [
               {
                 id: '21',
-                name: 'Unpublished Assignment',
+                name: 'Unpublished Retos',
                 points_possible: 10,
                 grading_type: 'percent',
                 submission_types: ['none'],
@@ -1094,7 +1094,7 @@ QUnit.module('ScreenReader Gradebook', suiteHooks => {
       }))
   })
 
-  QUnit.module('Differentiated Assignments', hooks => {
+  QUnit.module('Differentiated Retos', hooks => {
     hooks.beforeEach(() => {
       initializeApp()
       return asyncHelper.waitForRequests()

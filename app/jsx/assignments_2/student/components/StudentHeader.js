@@ -28,7 +28,7 @@ function StudentHeader() {
     <div data-test-id="assignments-2-student-header">
       <AssignmentGroupModuleNav
         module={{name: 'Egypt Economy Research Module: Week 1', link: 'www.google.com'}}
-        assignmentGroup={{name: 'Research Assignments', link: 'www.yahoo.com'}}
+        assignmentGroup={{name: 'Research Retos', link: 'www.yahoo.com'}}
       />
       <Flex>
         <FlexItem grow>

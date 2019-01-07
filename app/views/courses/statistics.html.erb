@@ -41,7 +41,7 @@
 <div id="reports-tabs" style="display:none;">
   <ul>
     <li><a href="#tab-totals"><%= t('tabs.totals', %{Totals}) %></a></li>
-    <li><a href="#tab-assignments"><%= t('tabs.assignments', %{Assignments}) %></a></li>
+    <li><a href="#tab-assignments"><%= t('tabs.assignments', %{Retos}) %></a></li>
     <li><a href="#tab-students" id="students_stats_tab"><%= t('tabs.students', %{Students}) %></a></li>
     <li><a href="#tab-files"><%= t('tabs.files', %{File Storage}) %></a></li>
   </ul>
@@ -55,7 +55,7 @@
         <td class="indent"><%= t('discussion_posts', %{Discussion Posts}) %></td>
         <td class="indent"><%= total_entries %></td>
       </tr><tr>
-        <td><%= t('assignments', %{Assignments}) %></td>
+        <td><%= t('assignments', %{Retos}) %></td>
         <td><%= @context.assignments.active.count %></td>
       </tr><tr>
         <td class="indent"><%= t('assignment_groups', %{Assignment Groups}) %></td>
@@ -85,17 +85,17 @@
     </table>
   </div>
   <div class="stats" id="tab-assignments">
-    <h2><%= t('headings.assignments', %{Assignments Usage Report}) %></h2>
+    <h2><%= t('headings.assignments', %{Retos Usage Report}) %></h2>
     <table>
       <thead><tr>
         <th><%= t('submission_type', %{Submission Type}) %></th>
-        <th><%= t('number_of_assignments', %{# Assignments}) %></th>
+        <th><%= t('number_of_assignments', %{# Retos}) %></th>
         <th><%= t('number_of_submissions', %{# Submissions}) %></th>
       </tr>
       </thead>
       <tfoot>
       <tr>
-        <th><%= t("All Assignments") %></th>
+        <th><%= t("All Retos") %></th>
         <th><%= total_assignments %></th>
         <th><%= total_submissions %></th>
       </tr></tfoot>

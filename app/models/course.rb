@@ -1328,7 +1328,7 @@ class Course < ActiveRecord::Base
     shard.activate do
       return if Rails.cache.read(['has_assignment_group', self].cache_key)
       if self.assignment_groups.active.empty?
-        self.assignment_groups.create(:name => t('#assignment_group.default_name', "Assignments"))
+        self.assignment_groups.create(:name => t('#assignment_group.default_name', "Retos"))
       end
       Rails.cache.write(['has_assignment_group', self].cache_key, true)
     end

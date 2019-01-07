@@ -433,13 +433,13 @@ const assignmentGroups = [
   },
   {
     id: '4',
-    name: 'Silent Assignments',
+    name: 'Silent Retos',
     position: 2,
     group_weight: 0,
     assignments: [
       {
         id: '20',
-        name: 'Published Assignment',
+        name: 'Published Retos',
         points_possible: 10,
         grading_type: 'percent',
         submission_types: ['none'],

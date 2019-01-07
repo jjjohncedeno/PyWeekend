@@ -29,7 +29,7 @@ class AssignmentsController < ApplicationController
   include KalturaHelper
   include SyllabusHelper
   before_action :require_context
-  add_crumb(proc { t '#crumbs.assignments', "Assignments" }, :except => [:destroy, :syllabus, :index]) { |c| c.send :course_assignments_path, c.instance_variable_get("@context") }
+  add_crumb(proc { t '#crumbs.assignments', "Retos" }, :except => [:destroy, :syllabus, :index]) { |c| c.send :course_assignments_path, c.instance_variable_get("@context") }
   before_action { |c| c.active_tab = "assignments" }
   before_action :normalize_title_param, :only => [:new, :edit]
 
@@ -40,7 +40,7 @@ class AssignmentsController < ApplicationController
       return unless tab_enabled?(@context.class::TAB_ASSIGNMENTS)
       log_asset_access([ "assignments", @context ], 'assignments', 'other')
 
-      add_crumb(t('#crumbs.assignments', "Assignments"), named_context_url(@context, :context_assignments_url))
+      add_crumb(t('#crumbs.assignments', "Retos"), named_context_url(@context, :context_assignments_url))
 
       max_name_length_required_for_account = AssignmentUtil.name_length_required_for_account?(@context)
       max_name_length = AssignmentUtil.assignment_max_name_length(@context)

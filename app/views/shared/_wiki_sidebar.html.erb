@@ -68,10 +68,10 @@
       <% end %>
       <% if @context.respond_to?(:assignments) %>
       <div>
-        <div aria-controls="assignment_panel" role="tab" class="header" aria-controls="wiki_pages_panel"><a href="#"><%= t('links_to.assignments', %{Assignments}) %></a></div>
+        <div aria-controls="assignment_panel" role="tab" class="header" aria-controls="wiki_pages_panel"><a href="#"><%= t('links_to.assignments', %{Retos}) %></a></div>
          <div id="assignment_panel" role="tabpanel">
             <ul class="wiki_pages page_list">
-              <li title="<%= t('insert.assignments', %{Click to insert a link to this assignment}) %>"><%= link_to t('links.assignments', "Assignments"), context_url(@context, :context_assignments_url)%></li>
+              <li title="<%= t('insert.assignments', %{Click to insert a link to this assignment}) %>"><%= link_to t('links.assignments', "Retos"), context_url(@context, :context_assignments_url)%></li>
               <% for assignment in @wiki_sidebar_data[:active_assignments].select{|a| !a.new_record?} %>
                 <li title="<%= t('insert.assignments', %{Click to insert a link to this assignment}) %>"><%= link_to assignment.title, context_url(@context, :context_assignment_url, assignment) %></li>
               <% end %>
@@ -139,7 +139,7 @@
          <div role="tabpanel" id="groups_panel">
             <ul class="wiki_pages page_list">
               <% if @context.respond_to?(:assignments) %>
-                <li title="<%= t('insert.assignments_page', %{Click to insert a link to the assignments page}) %>"><%= link_to t('links.assignments_page', "Assignments"), context_url(@context, :context_assignments_url)%></li>
+                <li title="<%= t('insert.assignments_page', %{Click to insert a link to the assignments page}) %>"><%= link_to t('links.assignments_page', "Retos"), context_url(@context, :context_assignments_url)%></li>
               <% end %>
               <% if @context.respond_to?(:wiki) %>
                 <li title="<%= t('insert.wiki_pages_index', %{Click to insert a link to the wiki}) %>"><%= link_to t('links.wiki_pages_index', "Pages"), polymorphic_url([@context, :wiki_pages]) %></li>

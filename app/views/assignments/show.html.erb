@@ -59,7 +59,7 @@
       </div>
       <div class='assignment-buttons'>
         <% if @context.root_account.feature_enabled?(:assignments_2) %>
-          <a id="toggle_assignments_2" class="btn" href="<%= course_assignment_path(@context, @assignment)%>?assignments_2=true"><%= t("Assignments 2") %></a>
+          <a id="toggle_assignments_2" class="btn" href="<%= course_assignment_path(@context, @assignment)%>?assignments_2=true"><%= t("Retos 2") %></a>
         <% end %>
         <button
           id="assignment_publish_button"
@@ -107,7 +107,7 @@
       </div>
       <div class='assignment-buttons'>
         <% if @context.root_account.feature_enabled?(:assignments_2) %>
-          <a id="toggle_assignments_2" class="btn" href="<%= course_assignment_path(@context, @assignment)%>?assignments_2=true"><%= t("Assignments 2") %></a>
+          <a id="toggle_assignments_2" class="btn" href="<%= course_assignment_path(@context, @assignment)%>?assignments_2=true"><%= t("Retos 2") %></a>
         <% end %>
         <%= render "shared/mark_as_done" %>
         <%= assignment_submission_button(@assignment, @current_user, @current_user_submission) %>

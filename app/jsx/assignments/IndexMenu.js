@@ -139,8 +139,8 @@ export default class IndexMenu extends React.Component {
           id="course_assignment_settings_link"
           role="button"
           tabIndex="0"
-          title={I18n.t('Assignments Settings')}
-          aria-label={I18n.t('Assignments Settings')}
+          title={I18n.t('Retos Settings')}
+          aria-label={I18n.t('Retos Settings')}
         >
           <i className="icon-more" aria-hidden="true" />
           <span className="screenreader-only">{I18n.t('Assignment Options')}</span>

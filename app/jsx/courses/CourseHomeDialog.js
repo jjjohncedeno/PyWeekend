@@ -111,7 +111,7 @@ class CourseHomeDialog extends React.Component {
       },
       {
         value: 'assignments',
-        label: I18n.t('Assignments List'),
+        label: I18n.t('Retos List'),
         checked: selectedDefaultView === 'assignments'
       },
       {
