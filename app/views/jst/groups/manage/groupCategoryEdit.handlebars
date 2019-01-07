@@ -5,6 +5,12 @@
       <input type="text" id="category_{{id}}_name" name="name" value="{{name}}">
     </label>
   </fieldset>
+  {{!-- <fieldset class="pad-box{{#if ENV.allow_self_signup}} dotted-separator{{/if}}">
+    <label>
+      {{#t "group_set_description"}}Description{{/t}} &nbsp;
+    <input type="text" id="category_{{id}}_description" name="descripiton" value="{{description}}">
+    </label>
+  </fieldset> --}}
   {{#if ENV.allow_self_signup}}
   <fieldset class="pad-box dotted-separator">
     <div class="control-group">

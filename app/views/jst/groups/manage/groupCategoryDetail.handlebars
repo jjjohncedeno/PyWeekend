@@ -14,9 +14,10 @@
     </div>
   {{/if}}
   
-  <label>Nueva para mostrar</label>
-
+  <button class="btn">Ordenar</button>
+ 
   {{#unless randomlyAssignStudentsInProgress}}
+
   <div class="group-category-actions">
     {{#unless locked}}
       <button class="btn add-group" title="{{#t}}Add Group{{/t}}" aria-label="{{#t}}Add Group{{/t}}"><i class='icon-plus'></i> {{#t "group"}}Group{{/t}}</button>

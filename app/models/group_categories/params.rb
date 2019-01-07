@@ -17,12 +17,12 @@
 
 module GroupCategories
 
-  class Params < Struct.new(:name, :group_limit)
+  class Params < Struct.new(:name, :description, :group_limit)
 
     attr_reader :raw_params
 
     def initialize(args, opts={})
-      super(args[:name], args[:group_limit])
+      super(args[:name], args[:description], args[:group_limit])
       @boolean_translator = opts.fetch(:boolean_translator){ Canvas::Plugin }
       @raw_params = args
     end
