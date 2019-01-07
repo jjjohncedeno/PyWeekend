@@ -96,38 +96,39 @@
 
   </div>
 
+  <div id="divCheckbox" style="display: none;">
 
-  <fieldset id="assignment_group_selector" class="control-group">
-  </fieldset>
-
+    <fieldset id="assignment_group_selector" class="control-group">
+    </fieldset>
+  </div>
   <div id="grading_type_selector"></div>
 
   <div id="graded_assignment_fields"
     aria-expanded="{{not isNotGraded}}"
     style="{{hiddenIf isNotGraded}}">
-
-    {{!--this empty div is in place to push the checkbox to the right of it--}}
-    <div class="form-column-left"></div>
-    <div id="omit-from-final-grade" class="form-column-right" style="margin-top: 14px;">
-      <label class="checkbox">
-        {{#if inClosedGradingPeriod}}
-          {{checkbox "omitFromFinalGrade"
-            id="assignment_omit_from_final_grade"
-            name="omit_from_final_grade"
-            readonly="readonly"
-            aria-readonly="true"
-          }}
-        {{else}}
-          {{checkbox "omitFromFinalGrade"
-            id="assignment_omit_from_final_grade"
-            name="omit_from_final_grade"
-          }}
-        {{/if}}
-        {{#t}}Do not count this assignment towards the final grade{{/t}}
-      </label>
-    </div>
-
     <div id="divCheckbox" style="display: none;">
+
+      {{!--this empty div is in place to push the checkbox to the right of it--}}
+      <div class="form-column-left"></div>
+      <div id="omit-from-final-grade" class="form-column-right" style="margin-top: 14px;">
+        <label class="checkbox">
+          {{#if inClosedGradingPeriod}}
+            {{checkbox "omitFromFinalGrade"
+              id="assignment_omit_from_final_grade"
+              name="omit_from_final_grade"
+              readonly="readonly"
+              aria-readonly="true"
+            }}
+          {{else}}
+            {{checkbox "omitFromFinalGrade"
+              id="assignment_omit_from_final_grade"
+              name="omit_from_final_grade"
+            }}
+          {{/if}}
+          {{#t}}Do not count this assignment towards the final grade{{/t}}
+        </label>
+      </div>
+
       {{>[assignments/submission_types_form]}}
     </div>
 
