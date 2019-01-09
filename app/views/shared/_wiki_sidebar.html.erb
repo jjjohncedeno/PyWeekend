@@ -84,7 +84,7 @@
         <div aria-controls="quizzes_panel" class="header" role="tab"><a href="#"><%= t('links_to.quizzes', %{Quizzes}) %></a></div>
          <div id="quizzes_panel" role="tabpanel">
             <ul class="wiki_pages page_list">
-              <li title="<%= t('insert.quizzes', %{Click to insert a link to this quiz}) %>"><%= link_to t('links.quizzes', "Quizzes"), context_url(@context, :context_quizzes_url) %></li>
+              <li title="<%= t('insert.quizzes', %{Click to insert a link to this quiz}) %>"><%= link_to t('links.quizzes', "Información"), context_url(@context, :context_quizzes_url) %></li>
               <% for quiz in @wiki_sidebar_data[:active_quizzes].select{|a| !a.new_record?} %>
                 <li title="<%= t('insert.quizzes', %{Click to insert a link to this quiz}) %>"><%= link_to quiz.title, context_url(@context, :context_quiz_url, quiz) %></li>
               <% end %>
