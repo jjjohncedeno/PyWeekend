@@ -28,6 +28,7 @@ import Checkbox from '@instructure/ui-forms/lib/components/Checkbox'
 import IconUserSolid from '@instructure/ui-icons/lib/Solid/IconUser'
 import {courseParamsShape, inputParamsShape} from './shapes'
 import {parseNameList, findEmailInEntry, emailValidator} from '../helpers'
+import TextInput from '@instructure/ui-forms/lib/components/TextInput';
 
   class PeopleSearch extends React.Component {
     static propTypes = Object.assign({}, inputParamsShape, courseParamsShape);
@@ -148,6 +149,16 @@ import {parseNameList, findEmailInEntry, emailValidator} from '../helpers'
               label={<ScreenReaderContent>{labelText}</ScreenReaderContent>}
               autoGrow={false} resize="vertical" height="9em"
               value={this.props.nameList} textareaRef={(ta) => { this.namelistta = ta; }}
+              messages={message}
+              onChange={this.onChangeNameList}
+            />
+          </fieldset>
+          <fieldset>
+            <div style={{marginBottom: '.5em'}}>{I18n.t('Paralelo:')} </div>
+            <TextInput
+              label={<ScreenReaderContent>{labelText}</ScreenReaderContent>}
+              autoGrow={false} resize="vertical" height="9em"
+              value=""
               messages={message}
               onChange={this.onChangeNameList}
             />
