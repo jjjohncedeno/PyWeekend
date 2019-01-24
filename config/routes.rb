@@ -208,6 +208,8 @@ CanvasRails::Application.routes.draw do
       delete 'crosslist' => 'sections#uncrosslist', as: :uncrosslist
     end
 
+    get 'group/get_all' => 'gradebooks#getAllGroups', as: :getAllGroups, :defaults => { :format => 'json' }
+
     get 'undelete' => 'context#undelete_index', as: :undelete_items
     post 'undelete/:asset_string' => 'context#undelete_item', as: :undelete_item
 
@@ -2279,6 +2281,8 @@ CanvasRails::Application.routes.draw do
       get "security/jwks", action: :jwks, as: :jwks_show
     end
   end
+
+
 
   ApiRouteSet.draw(self, '/api/sis') do
     scope(controller: :sis_api) do

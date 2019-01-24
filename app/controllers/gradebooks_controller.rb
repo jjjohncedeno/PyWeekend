@@ -37,6 +37,12 @@ class GradebooksController < ApplicationController
 
   MAX_POST_GRADES_TOOLS = 10
 
+
+  def getAllGroups
+    arr_details = Group.where({:context_id => params[:course_id], :workflow_state => 'available' })
+    render :json => arr_details
+  end
+  
   def grade_summary
     set_current_grading_period if grading_periods?
     @presenter = grade_summary_presenter
@@ -79,6 +85,7 @@ class GradebooksController < ApplicationController
             }
           end
     end
+
 
     @exclude_total = exclude_total?(@context)
 

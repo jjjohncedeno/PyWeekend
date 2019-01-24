@@ -196,7 +196,7 @@ define [
       dataLoader.gotAssignmentGroups.then @gotAllAssignmentGroups
       dataLoader.gotCustomColumns.then @gotCustomColumns
       dataLoader.gotStudents.then @gotAllStudents
-
+      dataLoader.gotGroups.then @gotAllGroups
       $.when(
         dataLoader.gotCustomColumns,
         dataLoader.gotAssignmentGroups,
@@ -248,7 +248,7 @@ define [
         student = @student(studentId)
         @calculateStudentGrade(student)
         @grid.invalidateRow(student.row)
-
+      
       @grid.render()
 
     hiddenStudentIdsForAssignment: (studentIds, assignment) ->
@@ -421,9 +421,13 @@ define [
       @grid?.updateRowCount(@rows.length)
 
     gotAllStudents: =>
-      # add test students
+      # add test students 
       _.each _.values(@studentViewStudents), (testStudent) =>
         @addRow(testStudent)
+    
+    gotAllGroups: (response) =>
+      # add test students 
+      debugger
 
     defaultSortType: 'assignment_group'
 
