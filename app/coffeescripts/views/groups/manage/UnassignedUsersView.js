@@ -96,6 +96,7 @@ export default class UnassignedUsersView extends GroupUsersView {
   }
 
   toJSON() {
+    debugger
     return {
       loading: !this.collection.loadedAll,
       count: this.collection.length,
@@ -111,6 +112,7 @@ export default class UnassignedUsersView extends GroupUsersView {
   }
 
   focusAssignToGroup(e) {
+    debugger
     e.preventDefault()
     e.stopPropagation()
     const $target = $(e.currentTarget)
@@ -121,6 +123,7 @@ export default class UnassignedUsersView extends GroupUsersView {
   }
 
   showAssignToGroup(e) {
+    debugger
     if (this.elementIndex === -1) {
       e.preventDefault()
       e.stopPropagation()
@@ -133,6 +136,7 @@ export default class UnassignedUsersView extends GroupUsersView {
   }
 
   _getAssignToGroup() {
+    debugger
     if (!this.assignToGroupMenu) {
       this.assignToGroupMenu = new AssignToGroupMenu({collection: this.groupsCollection})
       this.assignToGroupMenu.on(
@@ -156,6 +160,7 @@ export default class UnassignedUsersView extends GroupUsersView {
             if (this.elementIndex === 0) {
               $('.filterable-unassigned-users').focus()
             } else {
+              debugger
               $(
                 studentElements[this.elementIndex - 1] ||
                   studentElements[studentElements.length - 1]
@@ -170,6 +175,7 @@ export default class UnassignedUsersView extends GroupUsersView {
   }
 
   hideAssignToGroup(e) {
+    debugger
     if (!this.fromAddButton) {
       if (this.assignToGroupMenu != null) {
         this.assignToGroupMenu.hide()
@@ -183,6 +189,7 @@ export default class UnassignedUsersView extends GroupUsersView {
   }
 
   setFilter(search_term, options) {
+    debugger
     const searchDefer = this.collection.search(search_term, options)
     if (searchDefer) {
       return searchDefer.always(() => {
@@ -203,6 +210,7 @@ export default class UnassignedUsersView extends GroupUsersView {
   // handle drop events on '.unassigned-students'
   // ui.draggable: the user being dragged
   _onDrop(e, ui) {
+    debugger
     const user = ui.draggable.data('model')
 
     if (user.has('group') && groupHasSubmissions(user.get('group'))) {
@@ -224,6 +232,7 @@ export default class UnassignedUsersView extends GroupUsersView {
   }
 
   moveUser(user) {
+    debugger
     return setTimeout(() => this.category.reassignUser(user, null))
   }
 

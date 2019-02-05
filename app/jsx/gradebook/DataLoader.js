@@ -86,7 +86,7 @@ function getGradingPeriodAssignments (courseId) {
 
     const gotStudentPage = (students) => {
       studentChunkCb(students);
-
+      console.log(students);
       const studentIds = _.pluck(students, 'id');
       [].push.apply(pendingStudentsForSubmissions, studentIds);
 

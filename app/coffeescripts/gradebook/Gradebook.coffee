@@ -334,6 +334,7 @@ define [
       @postGradesStore.setSections @sections
 
     gotChunkOfStudents: (students) =>
+      
       for student in students
         student.enrollments = _.filter student.enrollments, @isStudentEnrollment
         isStudentView = student.enrollments[0].type == "StudentViewEnrollment"
@@ -342,6 +343,7 @@ define [
         if isStudentView
           @studentViewStudents[student.id] ||= htmlEscape(student)
         else
+          
           @students[student.id] ||= htmlEscape(student)
           @addRow(student)  # not adding student view students until all students have loaded
 
@@ -427,7 +429,7 @@ define [
     
     gotAllGroups: (response) =>
       # add test students 
-      debugger
+      
 
     defaultSortType: 'assignment_group'
 

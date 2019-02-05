@@ -153,16 +153,7 @@ import TextInput from '@instructure/ui-forms/lib/components/TextInput';
               onChange={this.onChangeNameList}
             />
           </fieldset>
-          <fieldset>
-            <div style={{marginBottom: '.5em'}}>{I18n.t('Paralelo:')} </div>
-            <TextInput
-              label={<ScreenReaderContent>{labelText}</ScreenReaderContent>}
-              autoGrow={false} resize="vertical" height="9em"
-              value=""
-              messages={message}
-              onChange={this.onChangeNameList}
-            />
-          </fieldset>
+          
           <fieldset className="peoplesearch__selections">
             <div>
               <div className="peoplesearch__selection">
