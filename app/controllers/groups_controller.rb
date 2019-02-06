@@ -157,18 +157,29 @@ class GroupsController < ApplicationController
   end
 
   def unassigned_members
-    category = @context.group_categories.where(id: params[:category_id]).first
-    return render :json => {}, :status => :not_found unless category
-    page = (params[:page] || 1).to_i rescue 1
-    per_page = Api.per_page_for(self, default: 15, max: 100)
-    if category && !category.student_organized?
-      groups = category.groups.active
-    else
-      groups = []
+    categories = @context.group_categories.where(id: params[:category_id])
+    # return render :json => {}, :status => :not_found unless category
+    # page = (params[:page] || 1).to_i rescue 1
+    groups = []
+    categories.each do |category|
+      per_page = Api.per_page_for(self, default: 15, max: 100)
+      if category && !category.student_organized?
+        groups = groups + category.groups.active
+      end
     end
+
+    Rails.logger.debug "message!!"
+    Rails.logger.debug groups
+    Rails.logger.debug category
+    
+    p "asd" 
+    p groups
 
     users = @context.users_not_in_groups(groups, order: User.sortable_name_order_by_clause('users')).
       paginate(page: page, per_page: per_page)
+    
+    Rails.logger.debug users
+    p users
 
     if authorized_action(@context, @current_user, :manage)
       json = {

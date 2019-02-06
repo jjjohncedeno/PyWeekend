@@ -47,7 +47,7 @@ export default class GroupCategoryView extends View {
   initialize(options) {
     let progress
     this.groups = this.model.groups()
-    debugger
+    
     // TODO: move all of these to GroupCategoriesView#createItemView
     if (options.groupCategoryDetailView == null) {
       options.groupCategoryDetailView = new GroupCategoryDetailView({

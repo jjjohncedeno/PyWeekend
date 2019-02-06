@@ -63,6 +63,7 @@ export default class GroupCategoryDetailView extends View {
 
   initialize(options) {
     super.initialize(...arguments)
+    
     return (this.randomlyAssignUsersView = new RandomlyAssignMembersView({
       model: options.model
     }))
@@ -154,6 +155,7 @@ export default class GroupCategoryDetailView extends View {
     this.parentView.$el.disableWhileLoading(disabler)
     disabler.done(() => {
       // display the dialog when all data is ready
+      
       const students = this.model
         .unassignedUsers()
         .map(user => ({id: user.get('id'), short_name: user.get('short_name')}))
