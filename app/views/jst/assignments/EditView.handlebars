@@ -106,7 +106,7 @@
   <div id="graded_assignment_fields"
     aria-expanded="{{not isNotGraded}}"
     style="{{hiddenIf isNotGraded}}">
-    <div id="divCheckbox" style="display: none;">
+    {{!-- <div id="divCheckbox" style="display: none;"> --}}
 
       {{!--this empty div is in place to push the checkbox to the right of it--}}
       <div class="form-column-left"></div>
@@ -130,7 +130,7 @@
       </div>
 
       {{>[assignments/submission_types_form]}}
-    </div>
+    {{!-- </div> --}}
 
     <fieldset id="similarity_detection_tools">
     </fieldset>
