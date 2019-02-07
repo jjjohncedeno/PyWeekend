@@ -100,12 +100,13 @@ function getGradingPeriodAssignments (courseId) {
   };
 
   const getGroups = (url) => {
+    
     return new Promise((resolve, reject) => {
       $.ajax({
       type: 'GET',
       url,
       success(resp) {
-        console.log(resp)
+        // console.log(resp)
       }
     }).fail((xhr, status, error) => {
       console.log(error)

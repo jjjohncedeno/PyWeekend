@@ -103,8 +103,23 @@ define [
 
     hasSections: $.Deferred()
 
+    groupsPersons = []
+      
+    $.ajax
+      type: 'GET'
+      url: 'http://localhost:3000/courses/1/group/get_all'
+      success: (resp) ->
+        useReturnData resp
+        return
+    
+    useReturnData = (data) ->
+      self.groupsPersons = data
+      console.log self.groupsPersons
+      return
+
     constructor: (@options) ->
       @gridReady = $.Deferred()
+      
 
       @courseContent =
         gradingPeriodAssignments: {}
@@ -395,11 +410,39 @@ define [
         mySections = (@sections[sectionId].name for sectionId in student.sections when @sections[sectionId])
         sectionNames = $.toSentence(mySections.sort())
 
-      displayName = if @options.list_students_by_sortable_name_enabled
-        student.sortable_name
-      else
-        student.name
+      # $.ajax
+      #   type: 'GET'
+      #   url: 'http://localhost:3000/courses/1/group/get_all'
+      #   success: (resp) ->
+      #     resp.forEach (group) ->
+      #       console.log group
+      #       if group.group.id == student.group_ids
+      #         displayName = group.group.name
+      #       return
+      #     console.log resp
+      #     return
+      # displayName = if @options.list_students_by_sortable_name_enabled
+      #   student.sortable_name
+      # else
+      #   student.name
+      console.log self.groupsPersons
 
+      # for key, value of self.groupsPersons
+      #   console.log "#{key} and #{value}"
+      #   if value.group.id == student.group_ids
+      #         displayName = value.group.name
+      #       return
+      # displayName = student.group_ids
+      
+      i = 0
+      while i < self.groupsPersons.length
+        console.log self.groupsPersons[i].group.id
+        console.log student
+        console.log student.group_ids[0]
+        if "#{self.groupsPersons[i].group.id}" == student.group_ids[0]
+          displayName = self.groupsPersons[i].group.name
+        i++
+      
       enrollmentStatus = if student.isConcluded
         I18n.t 'concluded'
       else if student.isInactive
