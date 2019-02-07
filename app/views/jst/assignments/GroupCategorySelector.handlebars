@@ -64,10 +64,11 @@
               {{/t}}
             </label>
           {{/unless}}
+        </div>
         
           {{!-- Group selection --}}
           <label id="assignment_group_category_id_label" for="group_category_id">
-            {{#t "group_set"}}Group Set{{/t}}
+            {{#t "group_set"}}Categorías: {{/t}}
           </label>
           <select id="assignment_group_category_id"
             name="{{#if nested}}assignment[group_category_id]{{else}}group_category_id{{/if}}"
@@ -84,7 +85,7 @@
             {{/each}}
             <option value="blank" {{selectedIf originalGroupRemoved}}></option>
           </select>
-        </div>
+        {{!-- </div> --}}
 
         <div>
           <button
@@ -94,7 +95,7 @@
             {{disabledIf inClosedGradingPeriod}}
             {{disabledIf groupCategoryIdDisabled}}
             >
-            {{#t}}New Group Category{{/t}}
+            {{#t}}Nueva Categoría{{/t}}
           </button>
         </div>
       </div>
