@@ -451,7 +451,7 @@ class RoleOverride < ActiveRecord::Base
      },
      :manage_assignments => {
        :label => lambda { t('permissions.manage_assignments', "Manage (add / edit / delete) assignments and quizzes") },
-       :label_v2 => lambda { t("Assignments and Quizzes - add / edit / delete") },
+       :label_v2 => lambda { t("Retos and Información - add / edit / delete") },
        :available_to => [
          'TaEnrollment',
          'DesignerEnrollment',

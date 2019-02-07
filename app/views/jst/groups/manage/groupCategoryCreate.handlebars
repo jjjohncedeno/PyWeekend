@@ -7,6 +7,16 @@
       <input type="text" id="new_category_name" name="name">
     </div>
   </fieldset>
+
+  {{!-- <fieldset class="pad-box{{#if ENV.allow_self_signup}} dotted-separator{{/if}}">
+    <label class="control-label" for="new_category_description">
+      {{#t "group_set_description"}}Description{{/t}}
+    </label>
+    <div class="controls">
+      <input type="text" id="new_category_description" name="description">
+    </div>
+  </fieldset> --}}
+
   {{#if ENV.allow_self_signup}}
   <fieldset class="pad-box dotted-separator">
     <span class="control-label">{{#t "self_signup"}}Self Sign-Up{{/t}}</span>

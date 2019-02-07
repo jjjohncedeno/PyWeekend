@@ -139,7 +139,7 @@ class AssetUserAccess < ActiveRecord::Base
         when "announcements"
           t("Course Announcements")
         when "assignments"
-          t("Course Assignments")
+          t("Course Retos")
         when "calendar_feed"
           t("Course Calendar")
         when "collaborations"

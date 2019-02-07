@@ -60,7 +60,7 @@ class AssignmentGroup < ActiveRecord::Base
 
   def generate_default_values
     if self.name.blank?
-      self.name = t 'default_title', "Assignments"
+      self.name = t 'default_title', "Retos"
     end
     if !self.group_weight || self.group_weight.nan?
       self.group_weight = 0

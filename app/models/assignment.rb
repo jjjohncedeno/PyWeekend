@@ -842,7 +842,7 @@ class Assignment < ActiveRecord::Base
   private :ensure_post_to_sis_valid
 
   def default_values
-    raise "Assignments can only be assigned to Course records" if self.context_type && self.context_type != "Course"
+    raise "Retos can only be assigned to Course records" if self.context_type && self.context_type != "Course"
     self.context_code = "#{self.context_type.underscore}_#{self.context_id}"
     self.title ||= (self.assignment_group.default_assignment_name rescue nil) || "Assignment"
 

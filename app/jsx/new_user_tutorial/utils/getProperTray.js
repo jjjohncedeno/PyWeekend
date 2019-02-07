@@ -47,7 +47,7 @@ import ConferencesTray from '../trays/ConferencesTray'
     } else if (path.includes('syllabus')) { // syllabus must come before assignments (courses/#/assignments/syllabus)
       return generateObject(SyllabusTray, I18n.t('Syllabus Tutorial Tray'), 'syllabus');
     } else if (path.includes('assignments')) {
-      return generateObject(AssignmentsTray, I18n.t('Assignments Tutorial Tray'), 'assignments');
+      return generateObject(AssignmentsTray, I18n.t('Retos Tutorial Tray'), 'assignments');
     } else if (path.includes('quizzes')) {
       return generateObject(QuizzesTray, I18n.t('Quizzes Tutorial Tray'), 'quizzes');
     } else if (path.includes('settings')) {

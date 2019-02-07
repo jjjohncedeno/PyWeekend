@@ -28,6 +28,7 @@ import Checkbox from '@instructure/ui-forms/lib/components/Checkbox'
 import IconUserSolid from '@instructure/ui-icons/lib/Solid/IconUser'
 import {courseParamsShape, inputParamsShape} from './shapes'
 import {parseNameList, findEmailInEntry, emailValidator} from '../helpers'
+import TextInput from '@instructure/ui-forms/lib/components/TextInput';
 
   class PeopleSearch extends React.Component {
     static propTypes = Object.assign({}, inputParamsShape, courseParamsShape);
@@ -152,6 +153,7 @@ import {parseNameList, findEmailInEntry, emailValidator} from '../helpers'
               onChange={this.onChangeNameList}
             />
           </fieldset>
+          
           <fieldset className="peoplesearch__selections">
             <div>
               <div className="peoplesearch__selection">

@@ -51,6 +51,7 @@ export default class AddUnassignedUsersView extends CollectionView {
   }
 
   toJSON() {
+    
     return {
       users: this.collection.toJSON(),
       term:

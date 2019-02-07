@@ -46,10 +46,10 @@
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <th scope="row"><%= before_label(:courses, "Courses") %></th>
+      <th scope="row"><%= before_label(:courses, "PyWeekend") %></th>
       <td><%= n(@counts_report['courses']) %></td>
       <td style="font-size: 0.8em; padding-<%= direction('left') %>: 20px;">
-        <a aria-label="<%= t("courses over time") %>" href="#" class="over_time_link" data-key="courses" data-name="<%= t('labels.courses', "Courses") %>">
+        <a aria-label="<%= t("courses over time") %>" href="#" class="over_time_link" data-key="courses" data-name="<%= t('labels.courses', "PyWeekend") %>">
           <span aria-hidden="true"><%= t(:over_time_link, "over time") %></span>
         </a></td>
     </tr>
@@ -118,7 +118,7 @@
 
 <% if can_do @account, @current_user, :read_course_list %>
 <% if @account == Account.default %>
-<h2><%= t(:recently_created_courses_title, "Recently Created Courses") %></h2>
+<h2><%= t(:recently_created_courses_title, "Recently Created PyWeekend") %></h2>
 <ul id="recently_created_item_list" class="item_list">
   <% @recently_created_courses.each do |course| %>
     <li>
@@ -143,7 +143,7 @@
 </ul>
 <% end %>
 
-<h2><%= t(:recently_started_courses_title, "Recently Started Courses") %></h2>
+<h2><%= t(:recently_started_courses_title, "Recently Started PyWeekend") %></h2>
 <ul id="recently_started_item_list" class="item_list">
   <% @recently_started_courses.each do |course| %>
     <li>
@@ -156,7 +156,7 @@
   <% end %>
 </ul>
 
-<h2><%= t(:recently_ended_courses_title, "Recently Ended Courses") %></h2>
+<h2><%= t(:recently_ended_courses_title, "Recently Ended PyWeekend") %></h2>
 <ul id="recently_ended_item_list" class="item_list">
   <% @recently_ended_courses.each do |course| %>
     <li>

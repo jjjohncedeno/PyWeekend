@@ -86,7 +86,7 @@ function getGradingPeriodAssignments (courseId) {
 
     const gotStudentPage = (students) => {
       studentChunkCb(students);
-
+      console.log(students);
       const studentIds = _.pluck(students, 'id');
       [].push.apply(pendingStudentsForSubmissions, studentIds);
 
@@ -97,6 +97,20 @@ function getGradingPeriodAssignments (courseId) {
 
     studentsLoaded = cheaterDepaginate(url, params, gotStudentPage);
     return studentsLoaded;
+  };
+
+  const getGroups = (url) => {
+    return new Promise((resolve, reject) => {
+      $.ajax({
+      type: 'GET',
+      url,
+      success(resp) {
+        console.log(resp)
+      }
+    }).fail((xhr, status, error) => {
+      console.log(error)
+    })
+  });
   };
 
   const getDataForColumn = (column, url, params, cb) => {
@@ -133,6 +147,7 @@ function getGradingPeriodAssignments (courseId) {
       gotGradingPeriodAssignments = getGradingPeriodAssignments(opts.courseId);
     }
     const gotCustomColumns = getCustomColumns(opts.customColumnsURL);
+    const gotGroups = getGroups('http://localhost:3000/courses/1/group/get_all')
     const gotStudents = getStudents(opts.studentsURL, opts.studentsParams, opts.studentsPageCb);
     const gotSubmissions = getSubmissions(opts.submissionsURL, opts.submissionsParams, opts.submissionsChunkCb, opts.submissionsChunkSize);
     const gotCustomColumnData = getCustomColumnData(opts.customColumnDataURL,
@@ -147,7 +162,8 @@ function getGradingPeriodAssignments (courseId) {
       gotGradingPeriodAssignments,
       gotStudents,
       gotSubmissions,
-      gotCustomColumnData
+      gotCustomColumnData,
+      gotGroups
     };
   };
 

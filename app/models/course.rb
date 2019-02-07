@@ -1328,7 +1328,7 @@ class Course < ActiveRecord::Base
     shard.activate do
       return if Rails.cache.read(['has_assignment_group', self].cache_key)
       if self.assignment_groups.active.empty?
-        self.assignment_groups.create(:name => t('#assignment_group.default_name', "Assignments"))
+        self.assignment_groups.create(:name => t('#assignment_group.default_name', "Retos"))
       end
       Rails.cache.write(['has_assignment_group', self].cache_key, true)
     end
@@ -2536,69 +2536,32 @@ class Course < ActiveRecord::Base
 
   def self.default_tabs
     [{
-      :id => TAB_HOME,
-      :label => t('#tabs.home', "Home"),
-      :css_class => 'home',
-      :href => :course_path
-    }, {
       :id => TAB_ANNOUNCEMENTS,
-      :label => t('#tabs.announcements', "Announcements"),
+      :label => t('#tabs.announcements', "Anuncios"),
       :css_class => 'announcements',
       :href => :course_announcements_path,
       :icon => 'icon-announcement'
     }, {
       :id => TAB_ASSIGNMENTS,
-      :label => t('#tabs.assignments', "Assignments"),
+      :label => t('#tabs.assignments', "Retos"),
       :css_class => 'assignments',
       :href => :course_assignments_path,
       :icon => 'icon-assignment'
     }, {
-      :id => TAB_DISCUSSIONS,
-      :label => t('#tabs.discussions', "Discussions"),
-      :css_class => 'discussions',
-      :href => :course_discussion_topics_path,
-      :icon => 'icon-discussion'
-    }, {
       :id => TAB_GRADES,
-      :label => t('#tabs.grades', "Grades"),
+      :label => t('#tabs.grades', "Calificaciones"),
       :css_class => 'grades',
       :href => :course_grades_path,
     }, {
       :id => TAB_PEOPLE,
-      :label => t('#tabs.people', "People"),
+      :label => t('#tabs.people', "Categorias"),
       :css_class => 'people',
       :href => :course_users_path
     }, {
-      :id => TAB_PAGES,
-      :label => t('#tabs.pages', "Pages"),
-      :css_class => 'pages',
-      :href => :course_wiki_path
-    }, {
-      :id => TAB_FILES,
-      :label => t('#tabs.files', "Files"),
-      :css_class => 'files',
-      :href => :course_files_path,
-      :icon => 'icon-folder'
-    }, {
-      :id => TAB_SYLLABUS,
-      :label => t('#tabs.syllabus', "Syllabus"),
-      :css_class => 'syllabus',
-      :href => :syllabus_course_assignments_path
-    }, {
-      :id => TAB_OUTCOMES,
-      :label => t('#tabs.outcomes', "Outcomes"),
-      :css_class => 'outcomes',
-      :href => :course_outcomes_path
-    }, {
       :id => TAB_QUIZZES,
-      :label => t('#tabs.quizzes', "Quizzes"),
+      :label => t('#tabs.quizzes', "Información"),
       :css_class => 'quizzes',
       :href => :course_quizzes_path
-    }, {
-      :id => TAB_MODULES,
-      :label => t('#tabs.modules', "Modules"),
-      :css_class => 'modules',
-      :href => :course_context_modules_path
     }, {
       :id => TAB_CONFERENCES,
       :label => t('#tabs.conferences', "Conferences"),
@@ -2616,7 +2579,7 @@ class Course < ActiveRecord::Base
       :href => :course_lti_collaborations_path
     }, {
       :id => TAB_SETTINGS,
-      :label => t('#tabs.settings', "Settings"),
+      :label => t('#tabs.settings', "Configuraciones"),
       :css_class => 'settings',
       :href => :course_settings_path,
     }]

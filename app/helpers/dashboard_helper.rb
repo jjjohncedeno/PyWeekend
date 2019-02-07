@@ -81,7 +81,7 @@ module DashboardHelper
     when "Conversation"
       return I18n.t('helpers.dashboard_helper.conversation_label', "Visit Conversations")
     when "Assignment"
-      return I18n.t('helpers.dashboard_helper.assignment_label', "Visit Course Assignments")
+      return I18n.t('helpers.dashboard_helper.assignment_label', "Visit Course Retos")
     when "DiscussionTopic"
       return I18n.t('helpers.dashboard_helper.discussion_label', "Visit Course Discussions")
     when "AssessmentRequest"

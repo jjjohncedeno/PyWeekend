@@ -29,7 +29,7 @@ import I18n from 'i18n!assignment_categories'
   const Categories = {
     list: [
       {
-        label: I18n.t('Assignments'),
+        label: I18n.t('Retos'),
         id: 'assignment',
         contentTypeClass: 'assignment',
         submissionTypes: [

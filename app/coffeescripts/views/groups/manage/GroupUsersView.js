@@ -29,6 +29,7 @@ import 'jqueryui/droppable'
 export default class GroupUsersView extends PaginatedCollectionView {
   constructor(...args) {
     {
+      
       // Hack: trick Babel/TypeScript into allowing this before super.
       if (false) { super(); }
       let thisFn = (() => { return this; }).toString();
@@ -81,6 +82,7 @@ export default class GroupUsersView extends PaginatedCollectionView {
   }
 
   attach() {
+    
     this.model.on('change:members_count', this.render)
     this.model.on('change:leader', this.render)
     return this.collection.on('moved', this.highlightUser)
@@ -98,14 +100,17 @@ export default class GroupUsersView extends PaginatedCollectionView {
     e.preventDefault()
     e.stopPropagation()
     const $target = $(e.currentTarget)
+    
     const user = this.collection.getUser($target.data('user-id'))
-
+    
+    deb
     if (groupHasSubmissions(this.model)) {
       this.cloneCategoryView = new GroupCategoryCloneView({
         model: this.model.collection.category,
         openedFromCaution: true
       })
       this.cloneCategoryView.open()
+
       return this.cloneCategoryView.on('close', () => {
         if (this.cloneCategoryView.cloneSuccess) {
           return window.location.reload()
@@ -171,7 +176,7 @@ export default class GroupUsersView extends PaginatedCollectionView {
 
     const $target = $(e.currentTarget)
     const user = this.collection.getUser($target.data('user-id'))
-
+    
     this.moveTrayProps = {
       title: I18n.t('Move Student'),
       items: [
@@ -218,6 +223,7 @@ export default class GroupUsersView extends PaginatedCollectionView {
   }
 
   moveUser(user, groupId) {
+    
     return this.model.collection.category.reassignUser(user, this.model.collection.get(groupId))
   }
 

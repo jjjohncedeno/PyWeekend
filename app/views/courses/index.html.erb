@@ -16,7 +16,7 @@
 # with this program. If not, see <http://www.gnu.org/licenses/>.
 %>
 
-<% content_for :page_title, t('titles.courses', 'Courses') %>
+<% content_for :page_title, t('titles.courses', 'PyWeekend') %>
 
 <% content_for :auto_discovery do %>
   <% if @current_user %>
@@ -29,13 +29,13 @@
 <% @favorite_course_ids = @current_user.courses_with_primary_enrollment(:favorite_courses).map(&:id) %>
 <% @show_star_column = true %>
   <div class="header-bar">
-    <h2><%= t('headings.my_courses', %{All Courses}) %></h2>
+    <h2><%= t('headings.my_courses', %{All PyWeekend}) %></h2>
   </div>
 
   <div class="ic-Action-header content--hasMarginTop">
     <div class="ic-Action-header__Secondary">
       <% if @domain_root_account.feature_enabled?(:course_catalog) %>
-        <%= link_to t('browse_more_courses', 'Browse More Courses'), "/search/all_courses/", class:"Button" %>
+        <%= link_to t('browse_more_courses', 'Browse More PyWeekend'), "/search/all_courses/", class:"Button" %>
       <% end %>
 
       <% if show_user_create_course_button(@current_user) %>

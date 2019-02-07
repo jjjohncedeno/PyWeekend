@@ -75,7 +75,7 @@
     <% num_enrollments = 0 %>
     <div style="overflow: hidden; font-size: 0.8em;" id="content">
     <div id="courses_list" style="<%= hidden if @enrollments.empty? %>">
-      <h3><%= t('courses', 'Courses') %> <%= count_if_any(@enrollments.count) %></h3>
+      <h3><%= t('courses', 'PyWeekend') %> <%= count_if_any(@enrollments.count) %></h3>
       <div class="courses" style="font-size: 1.2em">
         <ul class="unstyled_list context_list" style="margin-<%= direction('left') %>: 5px; font-size: 0.9em; margin-bottom: 10px; max-height: 200px; overflow: auto;">
           <% @enrollments.each do |enrollment| %>

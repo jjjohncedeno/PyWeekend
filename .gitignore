@@ -16,7 +16,6 @@
 /.yardoc/
 /.ruby-version
 /app/views/info/styleguide.html.erb
-/config/*.yml
 /config/environments/*-local.rb
 /config/locales/generated/
 /config/RAILS5_2

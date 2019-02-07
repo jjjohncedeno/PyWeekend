@@ -38,7 +38,7 @@ const itemTypeLabels = {
 }
 
 const itemTypeLabelPlurals = {
-  assignment: I18n.t('Assignments'),
+  assignment: I18n.t('Retos'),
   quiz: I18n.t('Quizzes'),
   discussion_topic: I18n.t('Discussions'),
   wiki_page: I18n.t('Pages'),

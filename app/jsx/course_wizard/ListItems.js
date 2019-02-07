@@ -34,7 +34,7 @@ export default [
       {
         key:'add_assignments',
         complete: !ENV.COURSE_WIZARD.checklist_states.assignment_step,
-        title: I18n.t("Add Course Assignments"),
+        title: I18n.t("Add Course Retos"),
         text: I18n.t("Add your assignments.  You can just make a long list, or break them up into groups - and even specify weights for each assignment group."),
         url: ENV.COURSE_WIZARD.urls.add_assignments,
         iconClass: 'icon-assignment'
